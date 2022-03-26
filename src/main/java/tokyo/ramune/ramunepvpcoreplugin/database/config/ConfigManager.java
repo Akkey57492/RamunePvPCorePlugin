@@ -9,6 +9,7 @@ public class ConfigManager {
 
     public static void loadConfig() {
         config = new Config(RamunePvPCorePlugin.getPlugin(), "config.yml");
+        config.saveDefaultConfig();
     }
 
     public static FileConfiguration getConfig() {

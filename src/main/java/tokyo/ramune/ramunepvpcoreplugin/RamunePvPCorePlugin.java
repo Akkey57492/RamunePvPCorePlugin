@@ -1,7 +1,8 @@
 package tokyo.ramune.ramunepvpcoreplugin;
 
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import tokyo.ramune.ramunepvpcoreplugin.database.MySQL;
+import tokyo.ramune.ramunepvpcoreplugin.database.config.ConfigManager;
 import tokyo.ramune.ramunepvpcoreplugin.menu.MenuListener;
 
 public final class RamunePvPCorePlugin extends JavaPlugin {
@@ -11,7 +12,10 @@ public final class RamunePvPCorePlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+        ConfigManager.loadConfig();
         getServer().getMessenger().registerOutgoingPluginChannel(RamunePvPCorePlugin.getPlugin(), "BungeeCord");
+
+        MySQL.connect(true);
 
         getServer().getPluginManager().registerEvents(new MenuListener(), this);
         getLogger().info("The plugin has been enabled.");
@@ -19,6 +23,7 @@ public final class RamunePvPCorePlugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        MySQL.disconnect();
         getLogger().info("The plugin has been disabled.");
     }
 
