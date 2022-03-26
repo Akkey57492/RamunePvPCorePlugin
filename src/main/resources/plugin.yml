@@ -1,0 +1,31 @@
+name: RamunePvPCorePlugin
+version: '${project.version}'
+main: tokyo.ramune.ramunepvpcoreplugin.RamunePvPCorePlugin
+permissions:
+  RamunePvPCorePlugin.menu.open:
+    default: true
+  RamunePvPCorePlugin.command.hub:
+    default: true
+  RamunePvPCorePlugin.command.ban:
+    default: op
+  RamunePvPCorePlugin.command.temp-ban:
+    default: op
+  RamunePvPCorePlugin.command.kick:
+    default: op
+  RamunePvPCorePlugin.command.send:
+    default: op
+commands: 
+  menu:
+    description: "open menu"
+  hub:
+    description: "send player to hub"
+  ban:
+    description: "ban player"
+  temp-ban:
+    description: "temp-ban player"
+  kick:
+    description: "kick player"
+  send:
+    description: "send player to another server"
+  manage:
+    description: "manage server"
