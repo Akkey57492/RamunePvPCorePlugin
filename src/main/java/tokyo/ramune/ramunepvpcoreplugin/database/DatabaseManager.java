@@ -1,4 +1,4 @@
 package tokyo.ramune.ramunepvpcoreplugin.database;
 
-public class Config {
+public class DatabaseManager {
 }

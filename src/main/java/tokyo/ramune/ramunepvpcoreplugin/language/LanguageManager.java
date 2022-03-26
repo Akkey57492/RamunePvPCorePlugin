@@ -5,4 +5,6 @@ public class LanguageManager {
     public static String getText(String language) {
 
     }
+
+    public static
 }

@@ -11,6 +11,7 @@ public final class RamunePvPCorePlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+        getServer().getMessenger().registerOutgoingPluginChannel(RamunePvPCorePlugin.getPlugin(), "BungeeCord");
 
         getServer().getPluginManager().registerEvents(new MenuListener(), this);
         getLogger().info("The plugin has been enabled.");

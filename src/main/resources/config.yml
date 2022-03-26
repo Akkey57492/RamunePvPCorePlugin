@@ -1,11 +1,23 @@
 config:
-  #DO NOT CHANGE THIS VALUE!!
-  version: 1.0
 
   spawn-location:
-    X: 0
-    y: 0
-    z: 0
+    X: 0.0
+    y: 0.0
+    z: 0.0
     yaw: 0
     pitch: 0
 
+  mysql:
+    host: 127.0.0.1
+    port: 3306
+    user: dev
+    password: dev
+    database: dev
+
+  translate:
+    # DeepL only support
+    auth-key: KEY
+
+
+  # DO NOT CHANGE THIS VALUE!!
+  version: 1
