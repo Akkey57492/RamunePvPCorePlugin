@@ -30,7 +30,6 @@ public class Config {
     }
 
     public void reloadConfig() {
-
         config = YamlConfiguration.loadConfiguration(configFile);
 
         final InputStream defConfigStream = plugin.getResource(file);

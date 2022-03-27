@@ -16,6 +16,9 @@ public final class RamunePvPCorePlugin extends JavaPlugin {
         getServer().getMessenger().registerOutgoingPluginChannel(RamunePvPCorePlugin.getPlugin(), "BungeeCord");
 
         MySQL.connect(true);
+        if (!MySQL.isConnected()) {
+            getPluginLoader().disablePlugin(this);
+        }
 
         getServer().getPluginManager().registerEvents(new MenuListener(), this);
         getLogger().info("The plugin has been enabled.");
