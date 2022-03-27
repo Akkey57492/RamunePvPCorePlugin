@@ -17,7 +17,7 @@ public class ConfigManager {
     }
 
     public static boolean matchVersion() {
-        if ((int) getValue(ConfigText.CONFIG_VERSION) != 1) {
+        if (getIntValue(ConfigText.CONFIG_VERSION) != 1) {
             return false;
         }
         return true;
@@ -53,5 +53,21 @@ public class ConfigManager {
             default:
                 return null;
         }
+    }
+
+    public static String getStringValue(ConfigText configText) {
+        return String.valueOf(getValue(configText));
+    }
+
+    public static int getIntValue(ConfigText configText) {
+        return Integer.parseInt(String.valueOf(getValue(configText)));
+    }
+
+    public static float getFloatValue(ConfigText configText) {
+        return Float.parseFloat(String.valueOf(getValue(configText)));
+    }
+
+    public static boolean getBooleanValue(ConfigText configText) {
+        return Boolean.parseBoolean(String.valueOf(configText));
     }
 }

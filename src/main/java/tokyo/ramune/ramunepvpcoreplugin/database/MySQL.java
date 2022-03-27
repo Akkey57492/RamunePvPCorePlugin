@@ -39,11 +39,11 @@ public class MySQL {
     }
 
     public static void connect(boolean message) {
-        String host = String.valueOf(ConfigManager.getValue(ConfigText.MYSQL_HOST));
-        String user = String.valueOf(ConfigManager.getValue(ConfigText.MYSQL_USER));
-        String password = String.valueOf(ConfigManager.getValue(ConfigText.MYSQL_PASSWORD));
-        String database = String.valueOf(ConfigManager.getValue(ConfigText.MYSQL_DATABASE));
-        String port = String.valueOf(ConfigManager.getValue(ConfigText.MYSQL_PORT));
+        String host = ConfigManager.getStringValue(ConfigText.MYSQL_HOST);
+        String user = ConfigManager.getStringValue(ConfigText.MYSQL_USER);
+        String password = ConfigManager.getStringValue(ConfigText.MYSQL_PASSWORD);
+        String database = ConfigManager.getStringValue(ConfigText.MYSQL_DATABASE);
+        String port = ConfigManager.getStringValue(ConfigText.MYSQL_PORT);
 
         if (isConnected()) {
             if (message) {

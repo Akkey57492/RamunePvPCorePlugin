@@ -7,7 +7,7 @@ import tokyo.ramune.ramunepvpcoreplugin.RamunePvPCorePlugin;
 
 public class PlayerSender {
 
-    public void sendPlayer(Player player, String server) {
+    public static void sendPlayer(Player player, String server) {
         final ByteArrayDataOutput out = ByteStreams.newDataOutput();
         out.writeUTF("Connect");
         out.writeUTF(server);
