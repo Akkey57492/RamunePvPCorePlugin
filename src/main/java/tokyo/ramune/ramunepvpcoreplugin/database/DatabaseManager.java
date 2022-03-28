@@ -1,30 +1,13 @@
 package tokyo.ramune.ramunepvpcoreplugin.database;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerJoinEvent;
-import tokyo.ramune.ramunepvpcoreplugin.RamunePvPCorePlugin;
-
 public class DatabaseManager {
 
     public static void createTables() {
         if (!SQL.tableExists("players")) {
-            SQL.createTable("players", "UUID NOT NULL, Latest_join_date DATETIME NOT NULL, Language text NOT NULL");
+            SQL.createTable("players", "uuid NOT NULL, latest_join_date DATETIME NOT NULL, prefix text NOT NULL, language text NOT NULL");
         }
-    }
-
-    public static void registerPlayer(Player player) {
-        if (!SQL.exists("uuid", player.getUniqueId().toString(), "players")) {
-
+        if (!SQL.tableExists("prefixes")) {
+            SQL.createTable("prefixes", "name text NOT NULL, color text NOT NULL");
         }
-    }
-
-    public static void onPlayerJoin(PlayerJoinEvent e) {
-        Bukkit.getScheduler().runTaskAsynchronously(RamunePvPCorePlugin.getPlugin(), () -> {
-            if (!SQL.exists("uuid", e.getPlayer().getUniqueId().toString(), "players")) {
-
-            }
-
-        });
     }
 }
