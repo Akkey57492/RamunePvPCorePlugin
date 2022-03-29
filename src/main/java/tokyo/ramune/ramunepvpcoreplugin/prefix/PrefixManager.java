@@ -17,16 +17,12 @@ public class PrefixManager {
         SQL.deleteData("name", "=", prefix, "prefixes");
     }
 
-    public static String getPrefixColor(String prefix) {
-        
+    public static Prefix getPlayerPrefix(Player player) {
+        return new Prefix(String.valueOf(SQL.get("prefix", "uuid", "=", player.getUniqueId().toString(), "playets")));
     }
 
-    public static String getPlayerPrefix(Player player) {
-        return String.valueOf(SQL.get("prefix", "uuid", "=", player.getUniqueId().toString(), "playets"));
-    }
-
-    public static String getPlayerPrefix(UUID uuid) {
-        return String.valueOf(SQL.get("prefix", "uuid", "=", uuid.toString(), "players"));
+    public static Prefix getPlayerPrefix(UUID uuid) {
+        return new Prefix(String.valueOf(SQL.get("prefix", "uuid", "=", uuid.toString(), "players")));
     }
 
     public static void setPlayerPrefix(Player player, String prefix) {
@@ -38,6 +34,6 @@ public class PrefixManager {
     }
 
     public static void updatePlayerPrefix(Player player) {
-        player.setCustomName(getPrefixColor(getPlayerPrefix(player)) + getPlayerPrefix(player) + "§8 ╏ " + getPrefixColor(getPlayerPrefix(player)) + player.getName());
+        player.setCustomName(getPlayerPrefix(player).getColor() + getPlayerPrefix(player).getName() + "§8 ╏ " + getPlayerPrefix(player).getColor() + player.getName());
     }
 }

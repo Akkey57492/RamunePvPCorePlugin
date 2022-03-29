@@ -17,6 +17,9 @@ public enum MenuItem {
                 ItemStack itemStack = new ItemStack(Material.BARRIER);
                 ItemMeta itemMeta = itemStack.getItemMeta();
                 itemMeta.setDisplayName(LanguageManager.getText(Language.JAPANESE, languageText));
+
+            default:
+                return null;
         }
     }
 }
