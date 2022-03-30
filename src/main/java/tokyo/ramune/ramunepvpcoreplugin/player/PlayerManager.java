@@ -36,7 +36,9 @@ public class PlayerManager {
     }
 
     public static boolean updateBan(Player player) {
-        if (SQL.exists()); // エラーの根源は死ね!なにこれ...
+        if (SQL.exists()) {
+            ; // エラーの根源は死ね!なにこれ...
+        }
     }
 
     public static boolean isBanned(Player player) {
