@@ -1,5 +1,7 @@
 # RamunePvPCorePlugin
-RamunePvPサーバーのコアとなるプラグインです
+RamunePvPサーバーのコアとなるプラグインです。
+
+[![Java CI with Maven](https://github.com/RamunePvP/RamunePvPCorePlugin/actions/workflows/maven.yml/badge.svg)](https://github.com/RamunePvP/RamunePvPCorePlugin/actions/workflows/maven.yml)
 
 ## コマンド
 menu,hub,ban,temp-ban,kick,send,manage
